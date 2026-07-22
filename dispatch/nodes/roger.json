@@ -1,0 +1,10 @@
+{
+  "node": "ROGER_OFFLINE",
+  "tier": "TIER_E_SOVEREIGN",
+  "capabilities": ["Offline second opinion","sovereign compute","M2 Max local"],
+  "limitations": ["No GitHub push","No internet access","Check-ins require manual HITL transcription","NOT for Israeli case citations — SA.071+SA.078+SA.084 fabrication pattern"],
+  "dispatch_ready": false,
+  "checkin_path": "Manual transcription by operator into dispatch_log.jsonl",
+  "last_session": "UNKNOWN",
+  "last_updated": "2026-07-22T08:35:00+02:00"
+}

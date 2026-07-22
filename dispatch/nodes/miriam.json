@@ -1,0 +1,9 @@
+{
+  "node": "MIRIAM_M365",
+  "tier": "TIER_D_STRATEGIC",
+  "capabilities": ["Editorial coordination","cross-substrate QA","legal-adjacent review","grant final read","HITL attribution"],
+  "limitations": ["NOT a code substrate","No GitHub push","Dependent on M365 org access"],
+  "dispatch_ready": false,
+  "last_session": "UNKNOWN",
+  "last_updated": "2026-07-22T08:35:00+02:00"
+}

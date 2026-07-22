@@ -1,0 +1,9 @@
+{
+  "node": "PERPLEXITY_SONNET_4.6",
+  "tier": "TIER_C_POLISH",
+  "capabilities": ["GitHub MCP","web search","code execution","chart generation","file read"],
+  "limitations": ["No local filesystem write","No Acrobat","No M365 direct access"],
+  "dispatch_ready": true,
+  "last_session": "SA.092",
+  "last_updated": "2026-07-22T08:35:00+02:00"
+}

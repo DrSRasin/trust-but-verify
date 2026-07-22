@@ -1,0 +1,9 @@
+{
+  "node": "CLAUDE_CODE",
+  "tier": "TIER_C_POLISH",
+  "capabilities": ["Rust/Tauri builds","byte-for-byte verification","regex","test suites","git/GitHub","cross-platform"],
+  "limitations": ["No persistent memory across sessions without explicit handoff"],
+  "dispatch_ready": true,
+  "last_session": "VoxFaktura 1.0.0 certified 80060d5",
+  "last_updated": "2026-07-22T08:35:00+02:00"
+}

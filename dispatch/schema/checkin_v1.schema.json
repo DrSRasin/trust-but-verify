@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MnemAxis Dispatch Check-In v1",
+  "description": "Schema for substrate check-in events appended to dispatch_log.jsonl",
+  "type": "object",
+  "required": ["event","session_anchor","timestamp","node","status","evidence_grade"],
+  "properties": {
+    "event": {
+      "type": "string",
+      "enum": ["SESSION_OPEN","MILESTONE","HITL_GATE","ARCHITECTURAL_CHANGE","CALENDAR_WRITE","SESSION_CLOSE","TIMEOUT","ERROR"]
+    },
+    "session_anchor": {"type": "string", "pattern": "^SA\\.[0-9]+$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "node": {
+      "type": "string",
+      "enum": ["PERPLEXITY_SONNET_4.6","M365_OPUS_4.8","CLAUDE_CODE","MIRIAM_M365","ROGER_OFFLINE","GLM_5.2"]
+    },
+    "tier": {"type": "string"},
+    "operator": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["ACTIVE","STANDBY","BLOCKED","OFFLINE","TIMEOUT","ERROR","COMPLETE"]
+    },
+    "completed": {"type": "array", "items": {"type": "string"}},
+    "in_progress": {"type": "array", "items": {"type": "string"}},
+    "blocked": {"type": "array", "items": {"type": "string"}},
+    "open_loops": {"type": "array", "items": {"type": "string"}},
+    "hitl_required": {"type": "boolean"},
+    "hitl_items": {"type": "array", "items": {"type": "string"}},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "evidence_grade": {
+      "type": "string",
+      "enum": ["VERIFIED","INFERRED","SPECULATIVE","UNRESOLVED"]
+    },
+    "next_action": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}

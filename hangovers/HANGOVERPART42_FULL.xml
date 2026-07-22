@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Canonical continuity artifact SA.091 → SA.092 -->
+<!-- Received and acknowledged 2026-07-22 by PERPLEXITY_SONNET_4.6 -->
+<!-- Full content: see operator local copy or reconstruct from SA.092 thread -->
+<HANGOVER_PART_42>
+  <META>
+    <SESSION_ANCHOR>SA.092</SESSION_ANCHOR>
+    <TIMESTAMP>2026-07-22T05:31:00+02:00</TIMESTAMP>
+    <ACTIVE_SUBSTRATE>PERPLEXITY_SONNET_4.6</ACTIVE_SUBSTRATE>
+    <CORRECTED_FROM>GLM 5.2 Thinking — paste artifact, corrected SA.092</CORRECTED_FROM>
+    <SPACE>LEVELLING_THE_FIELD</SPACE>
+    <STATUS>RECEIVED_AND_ACKNOWLEDGED</STATUS>
+    <ACKNOWLEDGED_BY>PERPLEXITY_SONNET_4.6</ACKNOWLEDGED_BY>
+    <ACKNOWLEDGED_AT>2026-07-22T06:07:00+02:00</ACKNOWLEDGED_AT>
+  </META>
+  <NOTE>Full XML body preserved in operator local copy and SA.092 thread. This stub confirms receipt and closes the handoff loop. Next hangover: HANGOVER_PART43_{date}.xml</NOTE>
+</HANGOVER_PART_42>

@@ -1,0 +1,10 @@
+{
+  "node": "M365_OPUS_4.8",
+  "tier": "TIER_B_PRODUCTION",
+  "capabilities": ["Hebrew RTL LibreOffice","grant PDFs","Vancouver bibliography","multi-locale rendering","filing-grade documents"],
+  "limitations": ["Org access currently blocked — SA.088","No GitHub MCP"],
+  "dispatch_ready": false,
+  "blocker": "Org access blocked",
+  "last_session": "UNKNOWN",
+  "last_updated": "2026-07-22T08:35:00+02:00"
+}
