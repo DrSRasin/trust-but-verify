@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27T22:24:30Z",
+  "last_updated": "2026-07-27T22:32:40Z",
   "session_anchor": "SA.093",
   "status": "ACTIVE",
   "note": "This supersedes stale dispatch-only handoff for multi-agent TALK. Check-ins may still use dispatch/; async messages use MessageBus.",
@@ -55,5 +55,34 @@
     ],
     "how_to_verify": "Line 2 of instruction file must contain: Version: 2026-07-28c and scope locked to 14 and ksef-api IN"
   },
-  "how_to_find_instructions": "PRIMARY for Claude GitHub connector: trust-but-verify/portfolio_digest/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md . Also dispatch/message_bus_current.json. Desktop MessageBus is for TALK files, not only for instructions."
+  "how_to_find_instructions": "PRIMARY for Claude GitHub connector: trust-but-verify/portfolio_digest/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md . Also dispatch/message_bus_current.json. Desktop MessageBus is for TALK files, not only for instructions.",
+  "delivery_matrix": {
+    "claude_code_cloud": {
+      "message_bus_write": false,
+      "email": true,
+      "note": "Isolated remote container \u2014 cannot see /Users/macbookpro2023/Desktop"
+    },
+    "claude_desktop_cowork_with_fs": {
+      "message_bus_write": true,
+      "email": "if Gmail connector enabled",
+      "note": "Enable FS access to MessageBus root for To_Grok/To_Roger writes"
+    },
+    "grok_build": {
+      "message_bus_write": true,
+      "email": true,
+      "role": "Fan-out: after Claude email, Grok posts To_Roger (+ archive To_Grok)"
+    },
+    "roger_lm_studio": {
+      "message_bus_write": true,
+      "email": false,
+      "note": "Gmail MCP not configured; read digests from To_Roger via dual_bus"
+    },
+    "recommended_digest_pipeline": [
+      "Claude Code produces digest",
+      "Claude emails Simon",
+      "Grok reads Gmail or Simon pings Grok",
+      "Grok writes To_Roger/msg-portfolio-digest-YYYYMMDD.json",
+      "Roger dual_bus reads To_Roger"
+    ]
+  }
 }
