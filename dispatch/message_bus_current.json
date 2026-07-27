@@ -1,0 +1,54 @@
+{
+  "last_updated": "2026-07-27T22:20:39Z",
+  "session_anchor": "SA.093",
+  "status": "ACTIVE",
+  "note": "This supersedes stale dispatch-only handoff for multi-agent TALK. Check-ins may still use dispatch/; async messages use MessageBus.",
+  "message_bus": {
+    "root": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus",
+    "lanes": {
+      "To_Grok": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/To_Grok",
+      "To_Claude": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/To_Claude",
+      "To_Roger": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/To_Roger",
+      "_ack": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/_ack"
+    },
+    "retired": [
+      "/Users/macbookpro2023/Desktop/Kaplan_Warroom/06_Session_Handoff_Infra/mcp_dual_bus"
+    ],
+    "talk_vs_hire": {
+      "TALK": "write JSON envelope into To_<recipient>/ on MessageBus",
+      "HIRE": "grok_build / code agents — not the bus"
+    }
+  },
+  "portfolio_digest": {
+    "instruction_file_v": "v20260728c",
+    "instruction_paths": [
+      "/Users/macbookpro2023/Desktop/Kaplan_Warroom/06_Session_Handoff_Infra/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md",
+      "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md"
+    ],
+    "scope_count": 14,
+    "scope_repos": [
+      "DrSRasin/VoxFaktura",
+      "DrSRasin/WAW-HYPED-UP-RENT",
+      "DrSRasin/logosoma-app",
+      "DrSRasin/mnemaxis-shared",
+      "DrSRasin/LEVELLING_THE_FIELD",
+      "DrSRasin/multi-modular-roger",
+      "DrSRasin/KSEF-2.6",
+      "DrSRasin/ksef-api",
+      "DrSRasin/Hangover",
+      "DrSRasin/trust-but-verify",
+      "DrSRasin/biorXiv-SynergisticModulation-MixedDementia-2026",
+      "DrSRasin/anthropic-reparations-failed-claude-architecture",
+      "DrSRasin/google-reparations-failed-gemini-architecture",
+      "DrSRasin/discrimination-in-recruitment"
+    ],
+    "out_of_scope": ["DrSRasin/oaqjp-final-project-emb-ai"],
+    "ksef_api_note": "CRITICAL — Polish MoF / KSeF protocol watch; future feed into VoxFaktura on Simon GO. Use direct repo access if search_repositories misses it.",
+    "distribution": [
+      "email Simon.rasin@mnemaxis.org and/or simon.m.rasin@gmail.com",
+      "MessageBus To_Grok/msg-portfolio-digest-YYYYMMDD.json",
+      "MessageBus To_Roger/msg-portfolio-digest-YYYYMMDD.json"
+    ]
+  },
+  "how_to_find_instructions": "Read this file (dispatch/message_bus_current.json) first. Then open instruction_paths on local Desktop (not only GitHub). MessageBus is on Desktop, not inside this repo's dispatch/nodes."
+}

@@ -1,0 +1,11 @@
+{
+  "node": "grok_build",
+  "status": "ACTIVE",
+  "last_checkin": "2026-07-27T22:20:39Z",
+  "session_anchor": "SA.093",
+  "message_bus_root": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus",
+  "inbox": "To_Grok/",
+  "outbox_for_claude": "To_Claude/",
+  "outbox_for_roger": "To_Roger/",
+  "note": "TALK via MessageBus filesystem. HIRE via grok_build tools."
+}

@@ -1,9 +1,17 @@
 {
-  "node": "CLAUDE_CODE",
-  "tier": "TIER_C_POLISH",
-  "capabilities": ["Rust/Tauri builds","byte-for-byte verification","regex","test suites","git/GitHub","cross-platform"],
-  "limitations": ["No persistent memory across sessions without explicit handoff"],
-  "dispatch_ready": true,
-  "last_session": "VoxFaktura 1.0.0 certified 80060d5",
-  "last_updated": "2026-07-22T08:35:00+02:00"
+  "node": "claude_code",
+  "status": "ACTIVE",
+  "last_checkin": "2026-07-27T22:20:39Z",
+  "session_anchor": "SA.093",
+  "message_bus_root": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus",
+  "inbox": "To_Claude/",
+  "outbox_for_grok": "To_Grok/",
+  "outbox_for_roger": "To_Roger/",
+  "portfolio_digest_instructions": [
+    "/Users/macbookpro2023/Desktop/Kaplan_Warroom/06_Session_Handoff_Infra/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md",
+    "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md"
+  ],
+  "scope_count": 14,
+  "ksef_api": "CRITICAL — include even if search_repositories misses it",
+  "note": "Do not treat dispatch/nodes alone as the message bus. Async TALK is MessageBus on Desktop."
 }

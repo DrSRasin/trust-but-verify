@@ -1,22 +1,26 @@
 {
-  "last_updated": "2026-07-22T08:35:00+02:00",
-  "session_anchor": "SA.092",
+  "last_updated": "2026-07-27T22:20:39Z",
+  "session_anchor": "SA.093",
+  "message_bus_pointer": "dispatch/message_bus_current.json",
+  "message_bus_root": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus",
   "nodes": {
-    "perplexity_sonnet_4.6": {
+    "claude_code": {
       "status": "ACTIVE",
-      "last_checkin": "2026-07-22T08:35:00+02:00",
-      "current_task": "P0 repo scaffold push",
+      "last_checkin": "2026-07-27T22:20:39Z",
+      "current_task": "Daily Portfolio Evidence Digest scope=14 including ksef-api",
+      "dispatch_ready": true,
+      "bus": "read To_Claude/ on MessageBus; write digests to To_Grok/ and To_Roger/"
+    },
+    "grok_build": {
+      "status": "ACTIVE",
+      "last_checkin": "2026-07-27T22:20:39Z",
+      "current_task": "MessageBus cutover + digest instruction lock v20260728c",
       "dispatch_ready": true
     },
-    "m365_opus_4.8": {
-      "status": "BLOCKED",
-      "last_checkin": "UNKNOWN",
-      "blocker": "Org access blocked SA.088",
-      "dispatch_ready": false
-    },
-    "claude_code": {
-      "status": "STANDBY",
-      "last_checkin": "UNKNOWN",
+    "roger": {
+      "status": "ACTIVE",
+      "last_checkin": "2026-07-27T22:20:39Z",
+      "note": "LM Studio dual_bus bus-only MCP; MessageBus Desktop root",
       "dispatch_ready": true
     },
     "miriam_m365": {
@@ -24,11 +28,10 @@
       "last_checkin": "UNKNOWN",
       "dispatch_ready": false
     },
-    "roger_offline": {
-      "status": "OFFLINE",
-      "last_checkin": "UNKNOWN",
-      "note": "Manual transcription path required — no GitHub push capability",
-      "dispatch_ready": false
+    "perplexity_sonnet_4.6": {
+      "status": "STANDBY",
+      "last_checkin": "2026-07-22T08:35:00+02:00",
+      "dispatch_ready": true
     }
   }
 }

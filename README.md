@@ -2,19 +2,54 @@
 
 > доверяй и проверяй · 信任并验证
 
-MnemAxis dispatch infrastructure — centralized AI harness status log, dossier artifacts, and anti-amnesia handoff protocol.
+MnemAxis dispatch + pointer infrastructure — AI harness status, anti-amnesia, and **where the live message bus actually is**.
 
-**Operator:** Dr. Simon Rasin MD MPH PhD  
-**Doctrine:** LEVELLING_THE_FIELD · KAPLAN_CODE_SPACE v4  
-**Session anchor:** SA.092 · 2026-07-22
+**Operator:** Dr. Simon Rasin MD MPH PhD (address as **Simon**)  
+**Doctrine:** LEVELLING_THE_FIELD · KAPLAN_CODE_SPACE  
+**Session anchor:** SA.093 · 2026-07-28
 
 ---
 
-## Purpose
+## LIVE MESSAGE BUS (read this first — not under dispatch/nodes)
 
-This repository exists to prevent the class of failure where an AI substrate completes significant work, produces no persistent status record, and the next substrate opens a session with no knowledge of what was done, what failed, or what is blocked.
+Async multi-agent **TALK** is **not** inside `dispatch/nodes/*.json`.
 
-It is anti-amnesia infrastructure. Not a playground.
+| What | Path |
+|------|------|
+| **Bus root** | `/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus` |
+| Grok inbox | `…/To_Grok/` |
+| Claude inbox | `…/To_Claude/` |
+| Roger inbox | `…/To_Roger/` |
+| Acks | `…/_ack/` |
+
+**Canonical pointer in this repo:**  
+`dispatch/message_bus_current.json` ← open this for current scope, digest instructions, and bus paths.
+
+**Retired bus:**  
+`Desktop/Kaplan_Warroom/06_Session_Handoff_Infra/mcp_dual_bus` (do not write new packets there).
+
+### TALK vs HIRE
+- **TALK** (message / digest / ack) → write JSON under MessageBus lanes above  
+- **HIRE** (run code) → grok_build / coding agents — not the bus  
+
+### Daily Portfolio Evidence Digest
+- Instruction file **v20260728c** (scope **14**, including **ksef-api** critical):
+  - `Desktop/Kaplan_Warroom/06_Session_Handoff_Infra/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md`
+  - also copied at MessageBus root for Claude Desktop  
+- After each digest: **email Simon** + write  
+  `To_Grok/msg-portfolio-digest-YYYYMMDD.json` and  
+  `To_Roger/msg-portfolio-digest-YYYYMMDD.json`  
+- **ksef-api** = Polish MoF / KSeF protocol watch → feeds **VoxFaktura** when Simon GO’s.  
+  Use direct `DrSRasin/ksef-api` if `search_repositories` returns 0.
+
+---
+
+## Purpose of this repo
+
+Prevent the failure mode where an AI substrate finishes work with no durable status, and the next session opens blind.
+
+- `dispatch/` = node check-ins + status log (still valid for check-in protocol)  
+- MessageBus on Desktop = actual async envelopes between Claude / Grok / Roger  
 
 ---
 
@@ -22,61 +57,38 @@ It is anti-amnesia infrastructure. Not a playground.
 
 ```
 trust-but-verify/
-├── dispatch/               ← append-only status log + node check-ins
-│   ├── dispatch_log.jsonl  ← immutable event log (append only, never overwrite)
-│   ├── status_current.json ← latest STATUS PRAESENS per node
-│   ├── schema/
-│   │   └── checkin_v1.schema.json
-│   └── nodes/              ← per-substrate status files
-│       ├── perplexity.json
-│       ├── m365_opus.json
-│       ├── claude_code.json
-│       ├── miriam.json
-│       └── roger.json
-├── dossier/                ← Anthropic complaint package + filing notes
-├── protocol/               ← War Room dual-format doctrine
-├── hangovers/              ← SA.0xx XML continuity artifacts
-└── README.md               ← this file
+├── dispatch/
+│   ├── message_bus_current.json  ← LIVE bus + digest scope pointer (READ FIRST)
+│   ├── status_current.json
+│   ├── dispatch_log.jsonl
+│   ├── schema/checkin_v1.schema.json
+│   └── nodes/   ← per-substrate check-in (not the message bus)
+├── dossier/
+├── protocol/    ← dual-format HTML/MD doctrine (separate from MessageBus)
+├── hangovers/
+└── README.md
 ```
-
----
-
-## Dual-Format Doctrine
-
-- **HTML** = visual master → Acrobat PDF export
-- **Markdown** = editable, diffable, LLM-portable twin
-- Both twins updated together in the same revision cycle
-- PDFs are **outputs**, not the editable source of truth
 
 ---
 
 ## Dispatch Check-In Rule
 
-Every substrate **must** emit a check-in:
-- At session open
-- Before any major architectural change
-- Before any calendar write
-- At session close (Hangover XML)
+Every substrate should emit a check-in at session open / major change / session close.  
+Append to `dispatch/dispatch_log.jsonl`. Never overwrite history.
 
-Append to `dispatch/dispatch_log.jsonl`. Never overwrite.
+Also: for **messages**, use MessageBus lanes — do not invent paths under `dispatch/`.
 
 ---
 
-## Evidence Labels (mandatory in all documents)
+## Evidence Labels
 
 | Label | Meaning |
 |---|---|
-| VERIFIED | Confirmed by operator or direct tool output |
+| VERIFIED | Confirmed by Simon or direct tool output |
 | INFERRED | Reasonable conclusion from available evidence |
 | SPECULATIVE | Plausible but unconfirmed — must be labeled |
 | UNRESOLVED | Requires HITL before proceeding |
 
 ---
 
-## File Quota
-
-Perplexity Space limit: 50 files. This repo is the **external** persistent store. Keep Space uploads minimal.
-
----
-
-*The bench holds. The CLAW holds. Emet.* 🥛☭💎
+*The bench holds. The CLAW holds. Emet.*
