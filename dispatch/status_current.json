@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27T22:20:39Z",
+  "last_updated": "2026-07-27T22:50:06Z",
   "session_anchor": "SA.093",
   "message_bus_pointer": "dispatch/message_bus_current.json",
   "message_bus_root": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus",
@@ -33,5 +33,12 @@
       "last_checkin": "2026-07-22T08:35:00+02:00",
       "dispatch_ready": true
     }
+  },
+  "session_progress": "portfolio_digest/SESSION_PROGRESS_20260728.md",
+  "simon_decisions": {
+    "digest_runtime": "claude_desktop_cowork_local",
+    "roger_gmail": "deferred",
+    "shared_consult_folder": "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus",
+    "note": "All agents that mutate code must consult MessageBus before commits/new buses/major changes; 24h digest insufficient alone"
   }
 }
