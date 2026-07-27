@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27T22:20:39Z",
+  "last_updated": "2026-07-27T22:24:30Z",
   "session_anchor": "SA.093",
   "status": "ACTIVE",
   "note": "This supersedes stale dispatch-only handoff for multi-agent TALK. Check-ins may still use dispatch/; async messages use MessageBus.",
@@ -16,14 +16,16 @@
     ],
     "talk_vs_hire": {
       "TALK": "write JSON envelope into To_<recipient>/ on MessageBus",
-      "HIRE": "grok_build / code agents — not the bus"
+      "HIRE": "grok_build / code agents \u2014 not the bus"
     }
   },
   "portfolio_digest": {
     "instruction_file_v": "v20260728c",
     "instruction_paths": [
+      "https://github.com/DrSRasin/trust-but-verify/blob/main/portfolio_digest/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md",
+      "portfolio_digest/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md  (this repo \u2014 use GitHub connector)",
       "/Users/macbookpro2023/Desktop/Kaplan_Warroom/06_Session_Handoff_Infra/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md",
-      "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728.md"
+      "/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md"
     ],
     "scope_count": 14,
     "scope_repos": [
@@ -42,13 +44,16 @@
       "DrSRasin/google-reparations-failed-gemini-architecture",
       "DrSRasin/discrimination-in-recruitment"
     ],
-    "out_of_scope": ["DrSRasin/oaqjp-final-project-emb-ai"],
-    "ksef_api_note": "CRITICAL — Polish MoF / KSeF protocol watch; future feed into VoxFaktura on Simon GO. Use direct repo access if search_repositories misses it.",
+    "out_of_scope": [
+      "DrSRasin/oaqjp-final-project-emb-ai"
+    ],
+    "ksef_api_note": "CRITICAL \u2014 Polish MoF / KSeF protocol watch; future feed into VoxFaktura on Simon GO. Use direct repo access if search_repositories misses it.",
     "distribution": [
       "email Simon.rasin@mnemaxis.org and/or simon.m.rasin@gmail.com",
       "MessageBus To_Grok/msg-portfolio-digest-YYYYMMDD.json",
       "MessageBus To_Roger/msg-portfolio-digest-YYYYMMDD.json"
-    ]
+    ],
+    "how_to_verify": "Line 2 of instruction file must contain: Version: 2026-07-28c and scope locked to 14 and ksef-api IN"
   },
-  "how_to_find_instructions": "Read this file (dispatch/message_bus_current.json) first. Then open instruction_paths on local Desktop (not only GitHub). MessageBus is on Desktop, not inside this repo's dispatch/nodes."
+  "how_to_find_instructions": "PRIMARY for Claude GitHub connector: trust-but-verify/portfolio_digest/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md . Also dispatch/message_bus_current.json. Desktop MessageBus is for TALK files, not only for instructions."
 }
