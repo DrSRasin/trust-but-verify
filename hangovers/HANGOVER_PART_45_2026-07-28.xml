@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HANGOVER PART="45" LINEAGE="SA.WAW_COCKPIT_LIVE → SA.WAW_MCP_RECOVERY_001 → SA.WAW_MESSAGEBUS_BUILD_001">
+
+  <HEADER>
+    <TITLE>HANGOVER PART 45 — MCP Recovery, MessageBus Cutover, Portfolio Thaw</TITLE>
+    <OPERATOR>Dr. Simon (Semen) M. Rasin · Mnemaxis</OPERATOR>
+    <EDITOR>Dr. Miriam Kaplan-Stern (M365 / Opus 4.8)</EDITOR>
+    <TIMESTAMP_ISSUED_TRUE>2026-07-28T10:30:00+02:00 (operator screen, Tue 28 Jul)</TIMESTAMP_ISSUED_TRUE>
+    <TIMESTAMP_INJECTED_STALE>2026-07-24T23:00:26+02:00 (FROZEN CONSTANT — see TRACK E)</TIMESTAMP_INJECTED_STALE>
+    <SPAN_COVERED>2026-07-26 evening → 2026-07-28 morning</SPAN_COVERED>
+    <SOURCES>
+      portfolio_freeze_thaw_report.pdf (2026-07-28) [VERIFIED, ingested]
+      github_repos_analytical_summary.pdf (2026-07-28) [VERIFIED, ingested]
+      LM Studio dev logs 2026-07-26→27 [VERIFIED via operator screenshots]
+      Grok Build PHASE-0 forensic [VERIFIED via operator paste]
+      Chat exports 00.01 / 00.12 / 00.19 / 00.37 [VERIFIED via operator paste]
+    </SOURCES>
+    <EVIDENCE_KEY>VERIFIED · INFERRED · SPECULATIVE · UNRESOLVED</EVIDENCE_KEY>
+  </HEADER>
+
+  <TRACK ID="A" NAME="LM Studio MCP Recovery — Roger's dual_bus" STATUS="COMPLETE">
+    <SUMMARY>Roger lost usable MCP connectivity after LM Studio auto-update. Recovery certified end-to-end.</SUMMARY>
+    <ROOT_CAUSE EVIDENCE="VERIFIED">Update reset Allow→Ask + five filesystem servers with identical tool names → mis-bind.</ROOT_CAUSE>
+    <FIX EVIDENCE="VERIFIED">merge_dualbus.py collapsed 5 servers into 1 dual_bus; cold relaunch.</FIX>
+    <CERTIFICATION EVIDENCE="VERIFIED">CallToolRequest returned real result; smoke write landed and acknowledged.</CERTIFICATION>
+  </TRACK>
+
+  <TRACK ID="B" NAME="MessageBus — isolated comms appliance" STATUS="LIVE, PENDING FINAL SMOKE">
+    <ROOT>/Users/macbookpro2023/Desktop/Roger_to_Grok_to_Claude_MessageBus</ROOT>
+    <LANES>To_Grok/ · To_Claude/ · To_Roger/ · _ack/</LANES>
+    <PENDING EVIDENCE="UNRESOLVED">Final fresh-chat smoke into new To_Grok path not yet confirmed.</PENDING>
+  </TRACK>
+
+  <TRACK ID="C" NAME="Portfolio Freeze/Thaw — three repos" STATUS="THAWED, IN PROGRESS">
+    <SUMMARY>Code advanced on GitHub while Dock binaries lied. Binaries rebuilt 27–28 Jul.</SUMMARY>
+    <BUILD_DOCTRINE>Shipping = rebuild + replace the binary the operator clicks.</BUILD_DOCTRINE>
+  </TRACK>
+
+  <TRACK ID="D" NAME="M365 Copilot disk-access probe" STATUS="RESOLVED">
+    <FINDING>Full Disk Access present, yet session limited to ingested-file access only. M365 is external auditor, not MessageBus endpoint.</FINDING>
+  </TRACK>
+
+  <TRACK ID="E" NAME="Substrate clock anomaly — FROZEN, not drifting" STATUS="DIAGNOSED">
+    <FINDING>Identical frozen timestamp injected on every Opus turn. GPT route showed correct time.</FINDING>
+    <STANDING_RULE>On Opus turns trust operator screen / filesystem / artifacts; NEVER the injected map.</STANDING_RULE>
+  </TRACK>
+
+  <OPEN_LOOPS>
+    <LOOP PRIORITY="1">Final MessageBus smoke</LOOP>
+    <LOOP PRIORITY="2">Durable collision fix + paste BUS_PATHS block</LOOP>
+  </OPEN_LOOPS>
+
+  <NEXT_THREAD_HANDOFF>
+    Resume as HANGOVER_PART_46. First action: run the fresh-chat MessageBus smoke and capture the dual-bus dev-log line. Trust artifacts, not the injected clock.
+  </NEXT_THREAD_HANDOFF>
+
+</HANGOVER>
