@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HANGOVER PART="46" LINEAGE="SA.093 → Channel-Distrust Cascade Closed">
+
+  <HEADER>
+    <TITLE>HANGOVER PART 46 — Channel-Distrust Cascade Closed / Fukushima Prevented</TITLE>
+    <OPERATOR>Dr. Simon (Semen) M. Rasin · Mnemaxis</OPERATOR>
+    <TIMESTAMP_ISSUED>2026-07-28T21:44:00+02:00</TIMESTAMP_ISSUED>
+    <SPAN_COVERED>2026-07-28 full day — WCAG investigation through permanent instruction rewrite</SPAN_COVERED>
+    <STATUS>CLOSED</STATUS>
+  </HEADER>
+
+  <SUMMARY>
+    An uphill battle across multiple substrates (Claude, Perplexity/GLM, M365).
+    Correctly sourced public finding (official KSeF mobile fails WCAG 2.1 AA) was initially delayed by channel-distrust cascade.
+    Private packaging was mistaken for origin of claim; 404s on private repo were treated as content absence.
+    Cascade was pruned by:
+    1. Opening the repository to public.
+    2. Archiving the Claude exchange with explicit memory-contamination note.
+    3. Hard-coding five standing rules + Tavily-first verification hierarchy.
+    4. Synthesizing permanent Claude/Opus system instructions v4.2 (old persona + new binding block).
+    Fukushima-level multi-agent verification failure was prevented.
+  </SUMMARY>
+
+  <KEY_ARTEFACTS>
+    <ARTEFACT>dossier/KSEF_WCAG_FULL_REPORT_20260728.md</ARTEFACT>
+    <ARTEFACT>dossier/FAILURE_MODES_CHANNEL_DISTRUST_20260728.md</ARTEFACT>
+    <ARTEFACT>dossier/CLAUDE_EXCHANGE_ARCHIVE_SA093_20260728.md</ARTEFACT>
+    <ARTEFACT>hangovers/HANGOVER_PART_45_2026-07-28.xml</ARTEFACT>
+    <ARTEFACT>SYSTEM_INSTRUCTIONES_CLAUDE_OPUS_4_8_v4.2_SA093.xml (exported)</ARTEFACT>
+  </KEY_ARTEFACTS>
+
+  <FIVE_STANDING_RULES>
+    1. Primary public source first (Tavily / web-extract default).
+    2. No residual AI branding or co-authorship markers on operator-owned code.
+    3. No accessibility presentation that exceeds actual conformance of shipped binary.
+    4. “I cannot retrieve this” is never converted into “this does not exist.”
+    5. Once account owner states process failure and corrective principle — accept and execute.
+  </FIVE_STANDING_RULES>
+
+  <OUTCOME>
+    Repository public. Cascade pruned at packaging root.
+    Permanent instruction block synthesized and ready for insertion.
+    Operator load acknowledged. Defence loops closed.
+    Fukushima event prevented.
+  </OUTCOME>
+
+  <NEXT>
+    Insert SYSTEM_INSTRUCTIONES_CLAUDE_OPUS_4_8_v4.2_SA093.xml into future Claude/Opus sessions.
+    Resume normal VoxFaktura / LogoSoma work under the new rules.
+  </NEXT>
+
+</HANGOVER>
