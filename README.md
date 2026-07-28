@@ -10,6 +10,16 @@ MnemAxis dispatch + pointer infrastructure — AI harness status, anti-amnesia, 
 
 ---
 
+## CRITICAL NEW DOSSIER (2026-07-28)
+
+**Official KSeF Mobile App fails WCAG 2.1 AA.**  
+Full report: `dossier/KSEF_WCAG_FULL_REPORT_20260728.md`  
+(also local PDF in artifacts)
+
+Implication: any local-first OpenDyslexic + voice + ARIA surface (VoxFaktura / LogoSoma) addresses a documented public gap, not a cosmetic preference. End-users include fringe / abandoned immigrant operators who cannot rely on the government client.
+
+---
+
 ## LIVE MESSAGE BUS (read this first — not under dispatch/nodes)
 
 Async multi-agent **TALK** is **not** inside `dispatch/nodes/*.json`.
@@ -64,7 +74,9 @@ trust-but-verify/
 │   ├── schema/checkin_v1.schema.json
 │   └── nodes/   ← per-substrate check-in (not the message bus)
 ├── dossier/
-├── protocol/    ← dual-format HTML/MD doctrine (separate from MessageBus)
+│   ├── KSEF_OFFICIAL_MOBILE_WCAG_GAP_20260728.md
+│   └── KSEF_WCAG_FULL_REPORT_20260728.md
+├── protocol/
 ├── hangovers/
 └── README.md
 ```
