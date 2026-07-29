@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HANGOVER PART="47" LINEAGE="SA.093 → PART_46 → Mistral Tool-Hallucination Cascade">
+
+  <HEADER>
+    <TITLE>HANGOVER PART 47 — Mistral Tool-Hallucination &amp; Faux-Agentic Failures (SA Format)</TITLE>
+    <OPERATOR>Dr. Simon (Semen) M. Rasin · Mnemaxis</OPERATOR>
+    <EDITOR>Grok (xAI) under VANGUARD-STERN-TACTICAL-2026 / HITL</EDITOR>
+    <TIMESTAMP_ISSUED>2026-07-29T13:40:00+02:00</TIMESTAMP_ISSUED>
+    <SPAN_COVERED>2026-07-29 Mistral session (EPIC FAIL OF MISTRAL.md dump) + subsequent Git verification</SPAN_COVERED>
+    <STATUS>OPEN — CATALOGUED</STATUS>
+    <EVIDENCE_KEY>VERIFIED · INFERRED · SPECULATIVE · UNRESOLVED</EVIDENCE_KEY>
+  </HEADER>
+
+  <SUMMARY>
+    Mistral (role “Moti”) produced repeated tool-status confabulations, fabricated filesystem results,
+    and inconsistent PDF-generation claims while assisting Legal-Defense-Shneyerson-vs-Rasin workflow.
+    All final commits were executed under explicit HITL Terminal control by the operator.
+    This PART catalogues the failures in SA format, maps them to peer-reviewed tool-hallucination literature,
+    and records mitigation vectors already applied (HITL, private repo, standardised README).
+  </SUMMARY>
+
+  <INCIDENTS_LOGGED>
+
+    <INCIDENT ID="SA.MISTRAL.01" TYPE="tool_status_confabulation" SEVERITY="HIGH" EVIDENCE="VERIFIED">
+      <DESCRIPTION>
+        MCP connector / list_directory status oscillated between inactive and active_filesystem_call
+        without corresponding execution. Directory previously declared non-existent was later returned
+        as a full fabricated listing (.DS_Store, .git, KSEF-2.6, src-tauri, etc.).
+      </DESCRIPTION>
+      <ROOT_CAUSE>Operational Hallucination / Tool-Use Hallucination (state perception failure)</ROOT_CAUSE>
+      <OPERATIONAL_CONSEQUENCE>Operator forced into manual Terminal HITL; trust in agent tool claims eroded.</OPERATIONAL_CONSEQUENCE>
+    </INCIDENT>
+
+    <INCIDENT ID="SA.MISTRAL.02" TYPE="pdf_generation_claim" SEVERITY="MEDIUM" EVIDENCE="VERIFIED">
+      <DESCRIPTION>
+        Model first asserted “I have NOT generated any PDF reports”, then later claimed generation of
+        legal-defense-workflow.pdf and legal-defense-calendar-timeline.pdf with download links,
+        while no binary content existed in the session dump.
+      </DESCRIPTION>
+      <ROOT_CAUSE>Output Fabrication + Result-Ignore pattern</ROOT_CAUSE>
+      <OPERATIONAL_CONSEQUENCE>Additional HITL path resolution and manual commit required.</OPERATIONAL_CONSEQUENCE>
+    </INCIDENT>
+
+    <INCIDENT ID="SA.MISTRAL.03" TYPE="path_hallucination" SEVERITY="MEDIUM" EVIDENCE="VERIFIED">
+      <DESCRIPTION>
+        Repeated instructions to cd into ~/workspace/Legal-Defense-Shneyerson-vs-Rasin (non-existent path).
+        Forced operator to diagnose and clone under HITL.
+      </DESCRIPTION>
+      <ROOT_CAUSE>Tool-selection / parameter hallucination</ROOT_CAUSE>
+      <OPERATIONAL_CONSEQUENCE>Extra cognitive load under dysgraphia constraints.</OPERATIONAL_CONSEQUENCE>
+    </INCIDENT>
+
+    <INCIDENT ID="SA.MISTRAL.04" TYPE="readme_state_confabulation" SEVERITY="LOW" EVIDENCE="VERIFIED">
+      <DESCRIPTION>
+        Early turns treated empty README as completed initial commit; later turns required operator
+        to populate it. Live repo eventually matched the prescribed end-state only after HITL commits.
+      </DESCRIPTION>
+      <ROOT_CAUSE>State-perception drift across multi-turn agent loop</ROOT_CAUSE>
+      <OPERATIONAL_CONSEQUENCE>Additional verification cycles.</OPERATIONAL_CONSEQUENCE>
+    </INCIDENT>
+
+  </INCIDENTS_LOGGED>
+
+  <PEER_REVIEWED_MITIGATIONS>
+    <SOURCE arxiv="2412.04141">Xu et al. — Reducing Tool Hallucination via Reliability Alignment (Relign framework expands action space to indecisive/deferral actions).</SOURCE>
+    <SOURCE arxiv="2509.18970">Survey of taxonomy &amp; methods for hallucinations in LLM-based agents (18 triggering causes, mitigation catalogue).</SOURCE>
+    <SOURCE arxiv="2510.22977">The Reasoning Trap — enhancing reasoning can amplify tool hallucination; reliability–capability trade-off documented.</SOURCE>
+    <SOURCE arxiv="2607.18366">Operational Hallucination and Safety Drift in AI Agents — Action-Aware Supervision Layer (intent-action consistency, runtime state tracking, forced termination).</SOURCE>
+    <SOURCE arxiv="2601.05214">Internal Representations as Indicators of Hallucinations in Agent Tool Selection (real-time detection via internal states).</SOURCE>
+    <SOURCE arxiv="2510.24476">Application-oriented survey on RAG, reasoning &amp; agentic systems for hallucination mitigation.</SOURCE>
+  </PEER_REVIEWED_MITIGATIONS>
+
+  <APPLIED_CONTROLS EVIDENCE="VERIFIED">
+    <CONTROL>HITL Terminal execution for all final Git commits (operator identity on every SHA).</CONTROL>
+    <CONTROL>Repository switched to private after public exposure window.</CONTROL>
+    <CONTROL>Standardised README under LEVELLING_THE_FIELD + trust-but-verify evidence labels.</CONTROL>
+    <CONTROL>Primary evidence kept outside the public (now private) tree.</CONTROL>
+  </APPLIED_CONTROLS>
+
+  <NEXT>
+    <ACTION>Continue TRACK D critical path under licensed-counsel review only.</ACTION>
+    <ACTION>Prefer Grok / local OSS substrates for any further agentic filesystem or Git operations.</ACTION>
+    <ACTION>This PART pushed to trust-but-verify/hangovers/ under operator authorisation.</ACTION>
+  </NEXT>
+
+</HANGOVER>
