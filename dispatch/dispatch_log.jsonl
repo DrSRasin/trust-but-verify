@@ -2,3 +2,4 @@
 {"ts":"2026-07-27T22:20:39Z","event":"message_bus_pointer_published","session":"SA.093","by":"grok","for":"simon","payload":"dispatch/message_bus_current.json + status_current.json refresh; MessageBus Desktop path; digest v20260728c scope=14 ksef-api critical"}
 {"ts":"2026-07-27T22:24:30Z","event":"digest_instructions_published_in_repo","version":"v20260728c","path":"portfolio_digest/CLAUDE_DAILY_PORTFOLIO_DIGEST_INSTRUCTIONS_v20260728c.md","by":"grok","for":"simon"}
 {"ts":"2026-07-27T22:50:06Z","event":"session_progress_saved","session":"SA.093","by":"grok","for":"simon","file":"portfolio_digest/SESSION_PROGRESS_20260728.md","usage_supergrok_pct":7}
+{"ts":"2026-08-04T07:48:00+02:00","node":"grok_build","event":"critical_node","summary":"CRITICAL NODE memo MD+AtkinsonHC PDF committed Legal-Defense; agent distrust Mistral/KIMI/Cowork recorded; Phase2 HOLD TABAR 492/2026"}
