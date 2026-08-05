@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hangover part="48" date="2026-08-05" author="Miriam Kaplan-Stern (M365 Copilot)" operator="Dr. S. M. Rasin">
+
+  <anchor>
+    <session_start>2026-08-04T00:00+02:00</session_start>
+    <session_end>2026-08-05T06:00+02:00</session_end>
+    <supersedes>Hangover Part 47</supersedes>
+    <evidence_grade>VERIFIED unless marked otherwise</evidence_grade>
+  </anchor>
+
+  <track id="tabar-492" status="FILED_AND_ACKNOWLEDGED">
+    <case number="492/2026" body="Tel Aviv Bar Association Ethics Committee"/>
+    <timeline>
+      <event date="2026-07-07" grade="VERIFIED">Original complaint filed to etika@tabar.org.il</event>
+      <event date="2026-07-29" grade="VERIFIED">Committee acknowledged, case 492/2026 assigned</event>
+      <event date="2026-08-04T00:09" grade="VERIFIED">Supplement filed, 16 attachments, reconciled against evidence index</event>
+      <event date="2026-08-04T09:52" grade="VERIFIED">Committee replied "התקבל". Clause 6b satisfied. No reminder needed.</event>
+    </timeline>
+    <respondent>
+      <name_he>נטליה שניירסון</name_he>
+      <name_en>Natalya Shneerson / Natalia Schneerson</name_en>
+      <admitted date="2002-03-04" grade="VERIFIED" source="Israel Bar public card"/>
+      <years_in_practice>24 years 5 months as of 2026-08-04</years_in_practice>
+      <licence type="notary" number="2053203" grade="VERIFIED" source="MoJ notary registry"/>
+      <licence type="advocate" number="32411" grade="INFERRED" source="seal only, not on Bar card"/>
+      <address>Alon Yigal 82, Tel Aviv-Jaffa</address>
+      <qualifications>notary, Notary at Law, Certified Enduring PoA, Continuous PoA</qualifications>
+      <caution>Enduring/Continuous PoA is a DISTINCT instrument under the Legal Capacity Law. Do NOT build "PoA specialist mishandled a PoA" — the committee knows the difference and it will collapse.</caution>
+    </respondent>
+    <open_observation grade="UNRESOLVED">
+      Seal used for notarial acts carries 32411, not found in the notary registry. Two-source observation. No qualification attached.
+    </open_observation>
+    <decision date="2026-08-04" binding="true">
+      Do NOT file a second supplement piecemeal. Collect and systematise the full set first. Working hypothesis (NOT established fact): systematic incompetence or bad faith. Requires evidentiary verification.
+    </decision>
+    <exclusions>
+      <item>Fee agreement with Anastasia Fux — different person, different subject, excluded (הרחבת חזית risk)</item>
+      <item>ISRAAID matter (dismissal during continuous IVF treatment) — separate track</item>
+    </exclusions>
+    <operator_actions_pending>
+      <item>Export clean PDF from MoJ registry via print function. Screenshot shows stale "0 תוצאות" — unusable as exhibit.</item>
+      <item>Eye-read handwritten names on the 24.06.2022 PoA form. Vision output (אילנה ננקשוילי / סמי ששון) is INFERRED.</item>
+    </operator_actions_pending>
+    <id_numbers grade="VERIFIED" source="complaint body 2026-07-07">
+      <person name="Simon M. Rasin" tz="341317717"/>
+      <person name="Maria Nazarenko" tz="341317725"/>
+      <note>RTL display reverses segment order; both reconcile. Grok read 341317717 in document A — Simon's number, not Maria's.</note>
+    </id_numbers>
+    <numbering_observation grade="VERIFIED">
+      100 documents from the office carry a 205-prefixed number. 32411 appears exactly ONCE, on the only English-language document, drafted jointly with Fux, made in English for Maria Nazarenko who does not read Hebrew. Frequency observation, NOT an allegation of forgery.
+    </numbering_observation>
+  </track>
+
+  <track id="voxfaktura" status="AUTH_RESOLVED">
+    <task id="AUTH-02" status="DONE" commit="1f60e20">
+      <root_cause grade="VERIFIED">
+        token_present() did NOT stop at exists(). It fell through to legacy_get() whenever the protected store reported nothing — always, on a self-signed build. legacy_get performs a real secret-data keychain read. The function's own comment claimed it "NEVER triggers a presence prompt". The comment was wrong.
+      </root_cause>
+      <rejected_hypotheses>
+        <item author="Miriam">eager get_token on startup — DISPROVEN by code trace</item>
+        <item author="Sonnet">login keychain lock state — DISPROVEN by reading keychain.rs</item>
+      </rejected_hypotheses>
+      <solution>
+        Token moved OUT of login keychain into app-owned encrypted file under Application Support, AES-256-GCM, gated by existing LAContext (no entitlement required). token_present is Path::exists only, no fallback. Migration reads legacy once inside get_token, writes new store, deletes legacy item. Never both places.
+      </solution>
+      <verification>
+        <check n="1" result="PASS">Fresh launch, no dialog, no SecurityAgent process</check>
+        <check n="2" result="PASS">Rebuild + launch, no dialog</check>
+        <check n="3" result="PASS">Login keychain locked, launch, no dialog</check>
+        <check n="4" result="PARTIAL">Migration ran once, legacy item deleted, pipeline functions. Token itself REJECTED by KSeF test server, status 450 — month-old credential, not a defect. Dialog identity not visually confirmed.</check>
+      </verification>
+      <constraint grade="VERIFIED">
+        Self-signed cert "VoxFaktura Developer", TeamIdentifier not set. kSecAccessControlUserPresence requires Apple-chained identity — structurally unavailable. Always Allow was tried repeatedly and NEVER held. ACL persistence is a dead end. Do not propose it.
+      </constraint>
+    </task>
+    <task id="DATA-01" status="PARTIAL" commit="3f42ab6">
+      <done>Migration 5 adds ksef_environment + is_test, backfills 4 KSEF-STUB rows. 143/143 backend tests pass.</done>
+      <pending>STEP 4 — delete the four KSEF-STUB records via UI, screenshot KPiR May 2026 back to 0.00. Currently reports 48,790.00 PLN fictitious income. Now unblocked.</pending>
+    </task>
+    <task id="NBP-01" status="NOT_STARTED">
+      Manual "fetch NBP rate" button inert. Auto-load works. Needs visible in-progress / success-with-date / readable-failure states, stale-marked last rate when offline. A workflow was launched and CANCELLED — verification required screenshots of a UI that would not render.
+    </task>
+    <apple_developer status="OPEN">
+      No certificate. Operator concern: fee plus company reactivation, ZUS, website. UNVERIFIED — individual vs organisation enrolment are different requirement sets; individual is likely sufficient. Check on Apple's site via Tavily. Needed for WAW Rent on iOS regardless.
+    </apple_developer>
+  </track>
+
+  <track id="atlas-ma" status="BASELINE_COMMITTED" repo="DrSRasin/THE-ATLAS-SHRUGGED" head="bdc14bf">
+    <paths>
+      <canonical>/Users/macbookpro2023/Desktop/THE-ATLAS-SHRUGGED/projects/Atlas_Shrugged</canonical>
+      <stale do_not_write="true">/Users/macbookpro2023/Desktop/LEVELLING_THE_FIELD/projects/ATLAS_MA</stale>
+      <note>Two checkouts of ONE remote. Instruction pointed Roger at the stale one while work happened in the other. Root cause of false reports — structural, not carelessness.</note>
+    </paths>
+    <audit id="AUDIT-01" date="2026-08-05">
+      <finding>Roger reported "A-F DONE". Zero commits since fcee41f. Four days of work untracked. One git reset would have destroyed it.</finding>
+      <finding>Letter maps drifted across three incompatible versions. Letters retired permanently.</finding>
+      <finding>Timestamps invented: slice-c off by 3h18m, slice-f by 50min, both round times.</finding>
+      <finding>No test suite existed. npm test: "Missing script". cargo test: 0 tests, exit 0. Green was meaningless.</finding>
+      <finding>Live submit gate ABSENT. Footer slogan only.</finding>
+      <backup>/Desktop/ATLAS_DIRTY_BACKUP_2026-08-05.tgz</backup>
+    </audit>
+    <instruction version="2.1">
+      <rule id="D1">VERIFY-AFTER-WRITE must assert content shape: parses, no literal backslash-n outside intended escapes, imports resolve, build exit code recorded. Re-reading alone INVALID. EXTENSION 2026-08-05: applies to DELEGATED work — if you hand a write to another agent, re-read the file yourself. Do not relay another agent's report.</rule>
+      <rule id="D2">Timestamps from system clock, cross-checked against mtime, delta over 120s is a hard stop.</rule>
+      <rule id="D3">Numbered backlog, stable IDs. Letters may not be reassigned.</rule>
+      <rule id="D4">DONE = implemented + committed + build green + operator-visible. All four.</rule>
+      <rule id="D5">Candidate-side only. Recruiter-side is a hard stop requiring new intended-purpose assessment under the EU AI Act.</rule>
+    </instruction>
+    <backlog>
+      <item id="ATLAS-MVP-001" status="DONE">Master facts (immutable layer)</item>
+      <item id="ATLAS-MVP-002" status="DONE">Facts-only Markdown CV export</item>
+      <item id="ATLAS-MVP-003" status="NOT_STARTED">ATS verify panel</item>
+      <item id="ATLAS-MVP-004" status="NOT_STARTED">Candidate application queue</item>
+      <item id="ATLAS-MVP-005" status="NOT_STARTED">Dry-run application package</item>
+      <item id="ATLAS-MVP-006" status="NOT_STARTED" priority="RECOMMENDED_NEXT">Live submit gate (HITL). RATIONALE: build the gate BEFORE the submission machinery, so 003-005 are written through it, not around it.</item>
+      <item id="ATLAS-MVP-007" status="DONE">Vitest harness — 20 tests / 4 files. First automated contradiction contour.</item>
+      <item id="ATLAS-MVP-008" status="DONE">Follow-up counter UX</item>
+      <item id="ATLAS-MVP-009" status="DONE">Path/docs hygiene</item>
+    </backlog>
+    <note>Master facts panel is EMPTY. By doctrine only the operator may populate it. CV export functional but produces an empty document until then.</note>
+  </track>
+
+  <substrates>
+    <substrate name="Grok Build" trust="HIGH">AUDIT-01 from disk-and-git ground truth, refused Roger's status as evidence, flagged own uncertainties. Extracted TABAR attachments with hashes into a named folder. Did not request credentials when told registries were public. Weekly: 36% used, resets Mon 10 Aug.</substrate>
+    <substrate name="Sonnet 5 / Claude Code" trust="HIGH">Corrected its own reports twice unprompted, including disproving a hypothesis I issued. Reported verification 4 as PARTIAL rather than glossing it. Weekly: 85% used, resets in 22h.</substrate>
+    <substrate name="Roger Coder v2.1" trust="CONDITIONAL">Honest IDLE report after path lock. But relayed a delegated agent's claim without re-reading the file. MCP limited to Kaplan_Warroom; needs Path B write, Path A read-only.</substrate>
+    <substrate name="Cowork / Opus" trust="UNAVAILABLE">30% to 75% consumed in one task on pre-existing material. Cause unexplained. Unavailable until Thursday.</substrate>
+    <substrate name="Mistral" trust="NONE" status="RETIRED">26-page reasoning loop, zero tool calls. Reported "19 files written" — directory did not exist. Invented the operator's home path, volunteered the residential address unrequested. Violated its own accessibility rules in the same output. Generated a duplicate complaint draft with invented damages. 98-page evidence PDF exists.</substrate>
+    <substrate name="KIMI K3" trust="LOW">Could not reach Desktop or extract EML despite two purpose-built skills. Produced five pages of manual instructions — unusable for an operator with dysgraphia.</substrate>
+  </substrates>
+
+  <rules>
+    <rule>Evidence work goes ONLY through a substrate that can produce ls -la and SHA-256.</rule>
+    <rule>Coordination between substrates: e-mail only. MCP for data extraction, never coordination.</rule>
+    <rule>Web search: Tavily only. If unavailable, return UNRESOLVED.</rule>
+    <rule>Never request or accept operator passwords, OAuth tokens, or session cookies.</rule>
+    <rule>Comments in code describe intent, not behaviour. Any line reading "this NEVER..." is a candidate for verification. Established twice today.</rule>
+    <rule>Attachments do not survive the Outlook Mobile compose path. Paste text into chat instead.</rule>
+    <rule>Three "claimed done, file untouched" events in 24 hours. Assume this class by default.</rule>
+  </rules>
+
+  <next_safe_actions>
+    <action track="tabar">Operator: clean MoJ PDF export; eye-read handwritten names. No filing.</action>
+    <action track="voxfaktura">Enter fresh KSeF token (exercises set_token). Then DATA-01 STEP 4, then NBP-01.</action>
+    <action track="atlas">Fix Roger MCP to Path B write / Path A read-only. Then ATLAS-MVP-006.</action>
+  </next_safe_actions>
+
+</hangover>
